@@ -11,7 +11,7 @@ public class FileStrategy implements OutputStrategy {
         String fileName = "output.txt";
         int n = lines.size();
 
-        try (FileWriter fileWriter = new FileWriter(new File(fileName));) {
+        try (FileWriter fileWriter = new FileWriter(new File(fileName))) {
             for (int i = 0; i < n; i++) {
                 fileWriter.write(lines.get(i) + "\n");
             }
