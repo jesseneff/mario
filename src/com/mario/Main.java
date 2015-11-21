@@ -37,16 +37,14 @@ public class Main {
             lines.add(spaces+hashes);
         }
 
-
-        StrategySetting fileOutput = new StrategySetting(new FileStrategy());
-        StrategySetting consoleOutput = new StrategySetting(new ConsoleStrategy());
-
         //decide how to output based on input
         if (choice.equals("y") || choice.equals("yes")){
+            StrategySetting fileOutput = new StrategySetting(new FileStrategy());
             fileOutput.output(lines);
         }
         //output to console
         else{
+            StrategySetting consoleOutput = new StrategySetting(new ConsoleStrategy());
             consoleOutput.output(lines);
         }
     }
