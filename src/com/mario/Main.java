@@ -1,6 +1,5 @@
 package com.mario;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +9,6 @@ public class Main {
         Scanner input = new Scanner(System.in);
         int n;
         String choice;
-        ArrayList<String> lines = new ArrayList<>();
 
         //start input 1
         do {
@@ -30,22 +28,19 @@ public class Main {
             System.out.println();
         }
         while (n < 0 || n > 23);
+
         //populate list with output
-        for (int i = 1; i < n ; i++){
-            String spaces = new String(new char[(n-1)-i]).replace('\0', ' ');
-            String hashes = new String(new char[i+1]).replace('\0', '#');
-            lines.add(spaces+hashes);
-        }
+        Pyramid pyramid = new Pyramid().makePyramid(n);
 
         //decide how to output based on input
         if (choice.equals("y") || choice.equals("yes")){
             StrategySetting fileOutput = new StrategySetting(new FileStrategy());
-            fileOutput.output(lines);
+            fileOutput.output(pyramid);
         }
         //output to console
         else{
             StrategySetting consoleOutput = new StrategySetting(new ConsoleStrategy());
-            consoleOutput.output(lines);
+            consoleOutput.output(pyramid);
         }
     }
 }
