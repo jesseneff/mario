@@ -29,7 +29,7 @@ public class Main {
         }
         while (n < 0 || n > 23);
 
-        //populate list with output
+        //new pyramid according to spec
         Pyramid pyramid = new Pyramid().makePyramid(n);
 
         //decide how to output based on input
