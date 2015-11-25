@@ -1,6 +1,6 @@
 package com.mario;
 
-public class StrategySetting {
+public class StrategySetting implements OutputStrategy {
     private OutputStrategy strategy;
 
     public StrategySetting(OutputStrategy strategy){
