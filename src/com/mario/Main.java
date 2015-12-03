@@ -7,7 +7,6 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        StrategyFactory outputFactory = new StrategyFactory();
         int n;
         String choice;
 
@@ -35,12 +34,12 @@ public class Main {
 
         //decide how to output based on input
         if (choice.equals("y") || choice.equals("yes")){
-            OutputStrategy fileOutput = outputFactory.GetStrategy("file");
+            OutputStrategy fileOutput = StrategyFactory.getInstance().fileStrategy();
             fileOutput.output(pyramid);
         }
         //output to console
         else{
-            OutputStrategy consoleOutput = outputFactory.GetStrategy("console");
+            OutputStrategy consoleOutput = StrategyFactory.getInstance().consoleStrategy();
             consoleOutput.output(pyramid);
         }
     }

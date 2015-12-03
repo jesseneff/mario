@@ -4,13 +4,25 @@ package com.mario;
  * Created by Jesse on 11/25/2015.
  */
 public class StrategyFactory {
-    public OutputStrategy GetStrategy(String strategy){
-        if (strategy.equals("file")){
-            return new StrategySetting(new FileStrategy());
-        }
-        else {
-            return new StrategySetting(new ConsoleStrategy());
-        }
+
+    private StrategyFactory(){}
+
+    private static StrategyFactory factory;
+
+    public static StrategyFactory getInstance(){
+        if (factory == null){
+            factory = new StrategyFactory();
+            }
+        return factory;
     }
+
+    public OutputStrategy fileStrategy(){
+        return new FileStrategy();
+    }
+
+    public OutputStrategy consoleStrategy(){
+        return new ConsoleStrategy();
+    }
+
 
 }
