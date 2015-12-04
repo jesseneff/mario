@@ -1,11 +1,13 @@
-package com.mario;
+package com.jesse.mario;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Scanner;
 
-public class Main {
+public class App {
 
-    public static void main(String[] args) {
-
+    private void start() {
         Scanner input = new Scanner(System.in);
         int n;
         String choice;
@@ -43,4 +45,18 @@ public class Main {
             consoleOutput.output(pyramid);
         }
     }
+
+    public static void main(String[] args) {
+        System.out.println("Mario app - CS50 (Jesse Neff)\n");
+
+        ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
+
+
+        App app = (App) context.getBean("app1");
+        app.start();
+
+
+    }
+
+
 }

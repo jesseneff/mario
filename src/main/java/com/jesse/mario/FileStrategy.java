@@ -1,11 +1,10 @@
-package com.mario;
+package com.jesse.mario;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileStrategy implements OutputStrategy {
-    @Override
     public void output(Pyramid pyramid) {
         String fileName = "output.txt";
 

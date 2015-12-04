@@ -1,4 +1,4 @@
-package com.mario;
+package com.jesse.mario;
 
 /**
  * Created by Jesse on 11/25/2015.
